@@ -2,39 +2,41 @@
 	position: relative;
 	z-index: 10;
 	padding: 64px;
-	overflow: hidden; /* Ensures overflow doesn't disrupt animation */
+	overflow: hidden;
 }
 
 .container:hover .description {
 	display: block;
-	animation: expandBackground 0.5s forwards; /* Animation properties */
+	animation: expandBackground 0.5s forwards;
 }
 
 .description {
 	display: none;
-	background-color: #61892f; /* Adjust background color as needed */
+	background-color: #61892f;
 	color: white;
 	position: absolute;
-	top: 50%; /* Start from the center vertically */
+	top: 50%;
 	left: 0;
-	width: 100%; /* Full width initially */
-	height: 1px; /* Initially start with a thin line */
-	transform: translateY(-50%); /* Center vertically */
-	text-align: left; /* Center text horizontally */
-	padding: 20px;
-	font-size: 1.5rem; /* Adjust font size as needed */
-	line-height: 2; /* Adjust line height for vertical centering */
+	width: 100%;
+	height: 1px;
+	transform: translateY(-50%);
+	text-align: left;
+	padding: 0 20px;
+	font-size: 1.5rem;
+	line-height: 2;
+	cursor: pointer;
+	box-sizing: content-box;
 }
 
 @keyframes expandBackground {
 	from {
-		width: 100%; /* Full width */
-		height: 1px; /* Start with a thin line */
-		transform: translateY(-50%); /* Center vertically */
+		width: 100%;
+		height: 1px;
+		transform: translateY(-50%);
 	}
 	to {
-		width: 100%; /* Maintain full width */
-		height: calc(100%); /* Expand to full height minus padding */
-		transform: translateY(-50%); /* Center vertically */
+		width: 100%;
+		height: calc(100%);
+		transform: translateY(-50%);
 	}
 }

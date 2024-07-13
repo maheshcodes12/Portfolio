@@ -12,6 +12,26 @@ const HomePage = () => {
 	const size = isHovered ? 400 : 40;
 	const [scrollPosition, setScrollPosition] = useState(0);
 
+	const ProfileRef = useRef(null);
+	const AboutRef = useRef(null);
+	const WorkRef = useRef(null);
+	const ContactRef = useRef(null);
+	const [scrollToValue, setScrollToValue] = useState(0);
+
+	const handleTabChange = (newValue) => {
+		setScrollToValue(newValue);
+
+		if (newValue === 0) {
+			ProfileRef.current?.scrollIntoView({ behavior: "smooth" });
+		} else if (newValue === 1) {
+			AboutRef.current?.scrollIntoView({ behavior: "smooth" });
+		} else if (newValue === 2) {
+			WorkRef.current?.scrollIntoView({ behavior: "smooth" });
+		} else if (newValue === 3) {
+			ContactRef.current?.scrollIntoView({ behavior: "smooth" });
+		}
+	};
+
 	useEffect(() => {
 		const handleMouseMove = (e) => {
 			setMousePosition({
@@ -43,9 +63,13 @@ const HomePage = () => {
 
 	return (
 		<div>
-			<Header />
+			<div onClick={() => handleTabChange(0)}>
+				<Header />
+			</div>
 
-			<div className='w-[100vw] relative h-full '>
+			<div
+				ref={ProfileRef}
+				className='w-[100vw] relative h-full '>
 				<div className='h-[100vh] flex flex-col justify-center items-center gap-8 px-64'>
 					<h3 className='flex text-pretty tracking-widest text-[#86C232]'>
 						Mahesh Anant Suryawanshi
@@ -71,6 +95,7 @@ const HomePage = () => {
 					</motion.div>
 				</div>
 				<div
+					ref={AboutRef}
 					className={`${
 						scrollPosition > 500 && scrollPosition < 1000
 							? "text-white"
@@ -87,6 +112,7 @@ const HomePage = () => {
 					<Experience />
 				</div>
 				<div
+					ref={WorkRef}
 					className={`${
 						scrollPosition > 1650 && scrollPosition < 2300
 							? "text-white"
@@ -121,7 +147,9 @@ const HomePage = () => {
 
 				<div className='h-[60vh] flex flex-col justify-center align-top px-64'>
 					<h3 className='flex text-pretty text-[#61892F]'>Let's Talk</h3>
-					<div className='flex gap-64 w-full justify-start pt-14 items-center'>
+					<div
+						ref={ContactRef}
+						className='flex gap-64 w-full justify-start pt-14 items-center'>
 						<div
 							className={`flex flex-col leading-10 text-start font-extrabold text-3xl ${
 								scrollPosition > 2500 ? "text-white" : "text-[#6B6E70]"
@@ -159,11 +187,28 @@ const HomePage = () => {
 				</div>
 			</div>
 
-			<div className=' top-16 right-16 flex flex-col cursor-pointer gap-4 fixed'>
-				<div>About</div>
-				<div>Work</div>
-				<div>Resume</div>
-				<div>Contact</div>
+			<div className=' top-16 right-16 flex flex-col cursor-pointer gap-4 fixed '>
+				<div
+					onClick={() => handleTabChange(1)}
+					className='hover:text-[#61892F]'>
+					About
+				</div>
+				<div
+					onClick={() => handleTabChange(2)}
+					className='hover:text-[#61892F]'>
+					Work
+				</div>
+				<a
+					href='https://drive.google.com/file/d/1Vu4Hi6x3Ab-ETg_3YxPax55KuRufOkMs/view?usp=sharing'
+					target='_blank'
+					rel='noopener noreferrer'>
+					<div className='hover:text-[#61892F]'>Resume</div>
+				</a>
+				<div
+					onClick={() => handleTabChange(3)}
+					className='hover:text-[#61892F]'>
+					Contact
+				</div>
 			</div>
 		</div>
 	);
