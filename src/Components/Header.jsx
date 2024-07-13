@@ -13,7 +13,7 @@ const Header = () => {
 				</div>
 			</div>
 
-			<div className='flex flex-col gap-8 bottom-10 cursor-pointer mt-auto'>
+			<div className='flex-col gap-8 bottom-10 cursor-pointer mt-auto hidden sm:flex'>
 				<a
 					href='https://www.linkedin.com/in/mahesh-suryawanshi-768905257/'
 					target='_blank'

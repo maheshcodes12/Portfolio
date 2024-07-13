@@ -2,7 +2,7 @@
 	position: relative;
 	z-index: 10;
 	padding: 64px;
-	overflow: hidden;
+	text-wrap: wrap;
 }
 
 .container:hover .description {

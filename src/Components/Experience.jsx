@@ -17,7 +17,8 @@ const Experience = () => {
 				</div>
 
 				<div className='text-left  '>
-					<h1 className={`${!isHovered ? "hidden" : "relative"}`}>
+					<h1
+						className={`${!isHovered ? "hidden" : "relative"} text-[#6B6E70]`}>
 						Experienced in the fine arts of googling and hoping code aligns with
 						the universe's plans.
 					</h1>

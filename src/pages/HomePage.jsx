@@ -70,16 +70,16 @@ const HomePage = () => {
 			<div
 				ref={ProfileRef}
 				className='w-[100vw] relative h-full '>
-				<div className='h-[100vh] flex flex-col justify-center items-center gap-8 px-64'>
+				<div className='h-[100vh] w-full flex flex-col justify-center items-center gap-8 px-64 '>
 					<h3 className='flex text-pretty tracking-widest text-[#86C232]'>
 						Mahesh Anant Suryawanshi
 					</h3>
-					<div className='font-extrabold text-8xl text-white'>
+					<div className='font-extrabold sm:text-8xl text-xl text-white'>
 						<p>Passionate Web developer</p>
 					</div>
 
 					<motion.div
-						className='font-extrabold text-8xl text-[#61892F] maskimage pt-14'
+						className='font-extrabold text-8xl hidden sm:flex text-[#61892F] maskimage pt-14'
 						animate={{
 							WebkitMaskPosition: `${mousePosition.x - size / 2}px ${
 								mousePosition.y - size / 2
