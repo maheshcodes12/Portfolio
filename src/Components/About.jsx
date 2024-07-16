@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const About = () => {
 	return (
-		<div className='h-[80vh] flex flex-col justify-center align-top px-64 '>
+		<div className='h-[80vh] flex flex-col justify-center align-top # '>
 			<h3 className={` flex text-pretty text-[#464B47]`}>About me</h3>
 			<div>
 				<div className='text-left'>
