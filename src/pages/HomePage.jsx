@@ -156,14 +156,28 @@ const HomePage = () => {
 							}`}>
 							<div>
 								<i className='fa-solid fa-caret-right text-[#61892F] pr-4'></i>
-								Github
+								<a
+									href='https://github.com/maheshcodes12'
+									target='_blank'
+									rel='noopener noreferrer'>
+									Github
+								</a>
 							</div>
 							<div>
 								<i className='fa-solid fa-caret-right text-[#61892F] pr-4'></i>
-								LinkedIn
+								<a
+									href='https://www.linkedin.com/in/mahesh-suryawanshi-768905257/'
+									target='_blank'
+									rel='noopener noreferrer'>
+									LinkedIn
+								</a>
 							</div>
 							<div>
 								<i className='fa-solid fa-caret-right text-[#61892F] pr-4'></i>
+								<a
+									href='https://www.instagram.com/m.a_he.s.h/'
+									target='_blank'
+									rel='noopener noreferrer'></a>
 								Instagram
 							</div>
 						</div>
