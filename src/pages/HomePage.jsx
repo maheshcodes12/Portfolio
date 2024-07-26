@@ -177,8 +177,9 @@ const HomePage = () => {
 								<a
 									href='https://www.instagram.com/m.a_he.s.h/'
 									target='_blank'
-									rel='noopener noreferrer'></a>
-								Instagram
+									rel='noopener noreferrer'>
+									Instagram
+								</a>
 							</div>
 						</div>
 						<div className='flex flex-col leading-10 text-start'>
