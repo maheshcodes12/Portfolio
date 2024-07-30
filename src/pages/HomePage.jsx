@@ -5,68 +5,68 @@ import "./Homepage.css";
 import About from "../components/About";
 import Experience from "../components/Experience";
 import Projects from "../components/Projects";
-import { Container } from "../components/container";
+import Container from "../components/Container";
 
 const HomePage = () => {
-	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-	const [isHovered, setIsHovered] = useState(false);
-	const size = isHovered ? 400 : 40;
-	const [scrollPosition, setScrollPosition] = useState(0);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const size = isHovered ? 400 : 40;
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-	const ProfileRef = useRef(null);
-	const AboutRef = useRef(null);
-	const WorkRef = useRef(null);
-	const ContactRef = useRef(null);
-	const [scrollToValue, setScrollToValue] = useState(0);
+  const ProfileRef = useRef(null);
+  const AboutRef = useRef(null);
+  const WorkRef = useRef(null);
+  const ContactRef = useRef(null);
+  const [scrollToValue, setScrollToValue] = useState(0);
 
-	const handleTabChange = (newValue) => {
-		setScrollToValue(newValue);
+  const handleTabChange = (newValue) => {
+    setScrollToValue(newValue);
 
-		if (newValue === 0) {
-			ProfileRef.current?.scrollIntoView({ behavior: "smooth" });
-		} else if (newValue === 1) {
-			AboutRef.current?.scrollIntoView({ behavior: "smooth" });
-		} else if (newValue === 2) {
-			WorkRef.current?.scrollIntoView({ behavior: "smooth" });
-		} else if (newValue === 3) {
-			ContactRef.current?.scrollIntoView({ behavior: "smooth" });
-		}
-	};
+    if (newValue === 0) {
+      ProfileRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (newValue === 1) {
+      AboutRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (newValue === 2) {
+      WorkRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (newValue === 3) {
+      ContactRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-	useEffect(() => {
-		const handleMouseMove = (e) => {
-			setMousePosition({
-				x: e.clientX,
-				y: e.clientY,
-			});
-		};
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
 
-		window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
-		return () => {
-			window.removeEventListener("mousemove", handleMouseMove);
-		};
-	}, []);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			const currentScrollY =
-				document.documentElement.scrollTop || document.body.scrollTop;
-			setScrollPosition(currentScrollY);
-		};
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      setScrollPosition(currentScrollY);
+    };
 
-		window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-	return (
-		<div>
-			<div onClick={() => handleTabChange(0)}>
-				<Header />
-			</div>
+  return (
+    <div>
+      <div onClick={() => handleTabChange(0)}>
+        <Header />
+      </div>
 
       <div ref={ProfileRef}>
         <Container>
@@ -116,9 +116,9 @@ const HomePage = () => {
               : "text-[#6B6E70]"
           }`}
         >
-         <Container>
-		 <Experience />
-		 </Container>
+          <Container>
+            <Experience />
+          </Container>
         </div>
         <div
           ref={WorkRef}
@@ -129,85 +129,85 @@ const HomePage = () => {
           }`}
         >
           <Container>
-		  <Projects />
-		  </Container>
+            <Projects />
+          </Container>
         </div>
-
-     <Container>
-	 <div className="h-[40vh] flex flex-col justify-center align-top">
-          <h3
-            className={`flex text-pretty ${
-              scrollPosition > 2300 && scrollPosition < 2500
-                ? "text-[#61892F]"
-                : "text-[#464B47]"
-            }`}
-          >
-            If you got some more time
-          </h3>
-          <h1
-            className={`flex text-pretty ${
-              scrollPosition > 2300 && scrollPosition < 2500
-                ? "text-white"
-                : "text-[#6B6E70]"
-            }`}
-          >
-            <a
-              href="https://www.poetryfoundation.org/poems/46473/if---"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read "IF" by Rudyard Kipling
-            </a>
-          </h1>
-        </div>
-	 </Container>
 
         <Container>
-		<div className="h-[60vh] flex flex-col justify-center align-top">
-          <h3 className="flex text-pretty text-[#61892F]">Let's Talk</h3>
-          <div
-            ref={ContactRef}
-            className="flex gap-64 w-full justify-start pt-14 items-center"
-          >
-            <div
-              className={`flex flex-col leading-10 text-start font-extrabold text-3xl ${
-                scrollPosition > 2500 ? "text-white" : "text-[#6B6E70]"
+          <div className="h-[40vh] flex flex-col justify-center align-top">
+            <h3
+              className={`flex text-pretty ${
+                scrollPosition > 2300 && scrollPosition < 2500
+                  ? "text-[#61892F]"
+                  : "text-[#464B47]"
               }`}
             >
-              <div>
-                <i className="fa-solid fa-caret-right text-[#61892F] pr-4"></i>
-                Github
-              </div>
-              <div>
-                <i className="fa-solid fa-caret-right text-[#61892F] pr-4"></i>
-                LinkedIn
-              </div>
-              <div>
-                <i className="fa-solid fa-caret-right text-[#61892F] pr-4"></i>
-                Instagram
-              </div>
-            </div>
-            <div className="flex flex-col leading-10 text-start">
-              <p className="text-[#61892F] tracking-widest text-sm">EMAIL</p>
-              <p
-                className={`${
+              If you got some more time
+            </h3>
+            <h1
+              className={`flex text-pretty ${
+                scrollPosition > 2300 && scrollPosition < 2500
+                  ? "text-white"
+                  : "text-[#6B6E70]"
+              }`}
+            >
+              <a
+                href="https://www.poetryfoundation.org/poems/46473/if---"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read "IF" by Rudyard Kipling
+              </a>
+            </h1>
+          </div>
+        </Container>
+
+        <Container>
+          <div className="h-[60vh] flex flex-col justify-center align-top">
+            <h3 className="flex text-pretty text-[#61892F]">Let's Talk</h3>
+            <div
+              ref={ContactRef}
+              className="flex gap-64 w-full justify-start pt-14 items-center"
+            >
+              <div
+                className={`flex flex-col leading-10 text-start font-extrabold text-3xl ${
                   scrollPosition > 2500 ? "text-white" : "text-[#6B6E70]"
                 }`}
               >
-                maheshascoder@gmail.com
-              </p>
-              <p className="text-[#61892F] tracking-widest text-sm">Phone</p>
-              <p
-                className={`${
-                  scrollPosition > 2500 ? "text-white" : "text-[#6B6E70]"
-                }`}
-              >
-                +91 9322397800
-              </p>
+                <div>
+                  <i className="fa-solid fa-caret-right text-[#61892F] pr-4"></i>
+                  Github
+                </div>
+                <div>
+                  <i className="fa-solid fa-caret-right text-[#61892F] pr-4"></i>
+                  LinkedIn
+                </div>
+                <div>
+                  <i className="fa-solid fa-caret-right text-[#61892F] pr-4"></i>
+                  Instagram
+                </div>
+              </div>
+              <div className="flex flex-col leading-10 text-start">
+                <p className="text-[#61892F] tracking-widest text-sm">EMAIL</p>
+                <p
+                  className={`${
+                    scrollPosition > 2500 ? "text-white" : "text-[#6B6E70]"
+                  }`}
+                >
+                  maheshascoder@gmail.com
+                </p>
+                <p className="text-[#61892F] tracking-widest text-sm">Phone</p>
+                <p
+                  className={`${
+                    scrollPosition > 2500 ? "text-white" : "text-[#6B6E70]"
+                  }`}
+                >
+                  +91 9322397800
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-		</Container>
+        </Container>
       </div>
 
       <div className=" top-16 right-16 flex flex-col cursor-pointer gap-4 fixed ">
