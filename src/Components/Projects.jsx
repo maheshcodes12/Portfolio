@@ -3,7 +3,7 @@ import "./Projects.css";
 
 const Projects = () => {
 	return (
-		<div className='min-h-[100vh] w-full flex flex-col gap-4 justify-center items-start px-64'>
+		<div className='min-h-[100vh] w-full flex flex-col gap-4 justify-center items-start '>
 			<h3 className='flex text-pretty text-[#464B47]'>Projects</h3>
 			<ul className=' text-left'>
 				<li className='relative'>

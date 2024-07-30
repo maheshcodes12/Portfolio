@@ -4,7 +4,7 @@ const Experience = () => {
 	const [isHovered, setIsHovered] = useState(false);
 
 	return (
-		<div className='h-[80vh] flex flex-col justify-center align-top px-64'>
+		<div className='h-[80vh] flex flex-col justify-center align-top'>
 			<h3 className='flex text-pretty text-[#464B47]'>Experience</h3>
 			<div
 				onMouseEnter={() => setIsHovered(true)}
