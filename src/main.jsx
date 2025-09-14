@@ -9,4 +9,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>,
 )
 
-// Commit for checking git configuration on UBUNTU 
